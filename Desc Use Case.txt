@@ -1,0 +1,43 @@
+Il team, per motivi di spazio e di comodità ha deciso di "scompattare" le funzionalità offerte dal sistema, in base ai casi di utilizzo per ogni attore.
+L'attore Ammistatore, tramite la generalizzazione, eredita il comportamento del Moderatore 1, il Moderatore 1 eredita il comportamento del Moderatore 2,
+il Moderatore 2 eredita il comportamento dell'Utente.
+
+
+-Utente.
+	Abbiamo identificato gli use case principali che sono emersi dai scenari.
+	- Registrazione: se un utente non è registrato nella piattaforma, deve registrarsi, completando vari campi in cui inserire le informazioni personali.
+	- Login: tramite questo use case, l'utente entrerà nel sistema tramite username e password, e potrà usufruire delle funzioni messe a disposizione dal
+		 sistema.
+	- Logout: una volta terminato di utilizzare il sistema, l'utente puo scollegarsi.
+	- Visualizzazione Profilo: questo use case permette di accedere alle informazioni personali dell'utente, i punti totalizzati, trofei, [];
+	- Recensione Gioco: il sistema da la possibilità ad un utente loggato, di fare una recensione su un gioco. La recensione, prima di essere pubblicata 
+			    verrà controllata/analizzata da un moderatore, che approverà o negherà la recensione.
+	- Sessione Gioco: l'utente loggato puo "giocare" ai giochi presenti sulla piattaforma. Ogni gioco (con punteggi, livelli e trofei propri) farà
+                          incrementare il punteggio dell'utente su una classifica generale.
+	- Votazione Gioco: l'utente loggato, oltre che recensire il gioco, potrà votare il gioco, su una scala da - a -.
+
+
+-Moderatore 2.
+	-Gestione Recensioni: ogni recensione, prima di essere inserita, deve essere convalidata o negata da un moderatore (1 o 2, come detto il moderatore 1
+			      eredita le funzioni del moderatore 2). Una volta analizzata, una recensione puo essere:
+				-approvata, e inserita tra le recensioni del gioco recensito.
+				-negata, ed essere cancellata.
+
+
+-Moderatore 1.
+	-Gestione Utenti: con questa funzione, un Moderatore 1 può promuovere a moderatore 2 un utente, oppure può degradare un moderatore 2 ad utente.
+			  Si hanno quindi due funzionalità:
+				-Promuovi Utente: permettere di promuovere un utente a Moderatore 2, e quindi di poter approvare/negare recensioni.
+				-Retrocessione: permette di degradare un Moderatore 2 ad Utente semplice.
+
+-Amministratore.
+	-le tre funzioni fornite dal sistema all'amministratore sono:
+
+		- Aggiunta: un amministratore, puo aggiungere un nuovo gioco, aggiungere un livello ad un gioco, oppure aggiungere un nuovo utente-
+		- Rimozione: permette di eliminare un gioco tra quelli presenti sulla piattaforma, eliminare il livello di un gioco, o eliminare un utente
+			     dal sistema, in questo modo l'utente eliminato, non potrà piu loggarsi sulla piattaforma.
+		-Modifica: permette di modificare un utente, nel caso in cui, per problemi legati al sistema, un utente non riesca a modificare il profilo,
+			   ad esempio cambiare un campo delle informazioni personali, cambiare password ecc..
+			   Modificare un gioco, ad esempio modificare le regole del gioco, modificarne l'attribuzione dei punti ecc..
+			   Modificare un livello di un gioco, ad esempio se si vuole modificare il passaggio di livello raggiunti un determinato numero di punti,
+			   piuttosto che il numero di punti impostato precedentemente.
