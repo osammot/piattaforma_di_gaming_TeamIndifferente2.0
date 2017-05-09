@@ -53,7 +53,7 @@ CREATE TABLE `gruppo` (
 -- Struttura della tabella `gruppo/servizio`
 --
 
-CREATE TABLE `gruppo/servizio` (
+CREATE TABLE `gruppo_servizio` (
   `id_servizio` int(10) NOT NULL,
   `id_gruppo` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -76,7 +76,7 @@ CREATE TABLE `image` (
 -- Struttura della tabella `image/gioco`
 --
 
-CREATE TABLE `image/gioco` (
+CREATE TABLE `image_gioco` (
   `id_image` int(10) NOT NULL,
   `id_gioco` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -172,7 +172,7 @@ CREATE TABLE `user` (
 -- Struttura della tabella `user/gruppo`
 --
 
-CREATE TABLE `user/gruppo` (
+CREATE TABLE `user_gruppo` (
   `id_user` int(10) NOT NULL,
   `id_gruppo` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -183,7 +183,7 @@ CREATE TABLE `user/gruppo` (
 -- Struttura della tabella `user/trofeo`
 --
 
-CREATE TABLE `user/trofeo` (
+CREATE TABLE `user_trofeo` (
   `id_user` int(10) NOT NULL,
   `id_trofeo` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
