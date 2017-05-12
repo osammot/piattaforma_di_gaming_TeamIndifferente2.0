@@ -1,0 +1,51 @@
+/*
+*classe singleton per connessione al DB modificate user e password ;|
+*/
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+
+/**
+ *
+ * @author tom
+ */
+public final class ConnectionSingleton {
+ 
+    
+   
+    public Connection conn;
+    public static ConnectionSingleton db;
+    
+    
+    protected ConnectionSingleton() {
+        
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            this.conn = (Connection)DriverManager.getConnection("jdbc:mysql://localhost/gameplatform","username","password");
+           
+        
+        }
+        catch (Exception sqle) {
+            sqle.printStackTrace();
+        }
+    }
+    /**
+     *
+     * @return db
+     */
+    public static synchronized ConnectionSingleton getDbCon() {
+        if ( db == null ) {
+            db = new ConnectionSingleton();
+        }
+        return db;
+ 
+    }
+   
+   
+    
+    
+}
+    
+    
+    
+
