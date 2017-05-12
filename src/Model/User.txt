@@ -1,4 +1,6 @@
-
+/*
+*Luca quando crei le classi Dao per il usa gli stessi nomi del costruttore o cambiali anche qua :)
+*/
 package Model;
 
 /*
