@@ -1,0 +1,249 @@
+*
+{
+	margin: 0;
+	padding: 0;
+	color: #000;
+	font-family: courier;
+}
+
+body
+{
+	font-size: 100%;
+	background: url('../img/top.jpg') no-repeat fixed;
+	background-size: cover;
+}
+
+article,
+aside,
+content,
+div,
+footer, 
+header,
+label,
+main,
+nav
+{
+	display: block;
+	overflow: hidden;
+}
+
+header,
+main,
+footer
+{
+	width: 100%;
+	height: auto;
+}
+
+header
+{
+	position: fixed;
+	top: 0;
+	z-index: 999;
+}
+
+nav
+{
+	width: 80%;
+	height: auto;
+	margin: 0 auto;
+}
+
+footer > div
+{
+	width: 80%;
+	height: auto;
+	margin: 0 auto;
+	background: #333;
+}
+
+footer > div > p
+{
+	color: #fff;
+	float: right;
+	padding: 10px 5px;
+	font-size: 90%;
+}
+
+a, p
+{
+	line-height: 1.5;
+}
+
+a
+{
+	text-decoration: none;
+}
+
+a:hover
+{
+	text-decoration: underline;
+}
+
+ul
+{
+	list-style: none;
+}
+
+ul > li
+{
+	float: left;
+}
+
+ul > li > a
+{
+	display: block;
+	padding: 10px 12px;
+	text-align: center;
+}
+
+ul > li > a > img
+{
+	width: 20px;
+	height: auto;
+	padding: 0;
+}
+
+img
+{
+	width: 100%;
+	height: auto;
+}
+
+aside
+{
+	width: 90%;
+	height: auto;
+	border-bottom: 1px solid grey;
+	margin: 10px auto;
+	padding-bottom: 10px;
+}
+
+aside:last-child
+{
+	border-bottom: none;
+}
+
+aside > h1
+{
+	top: 0;
+	width: 100%;
+	height: auto;
+	background: #333;
+	color: #FFF;
+	border-bottom: 2px solid #209ff9;
+	text-align: center;
+	padding: 5px;
+	font-size: 100%;
+	text-shadow: 0.5px 0.5px 0.5px #000;
+}
+
+aside > a > img
+{
+	float: left;
+	width: 30%;
+	height: auto;
+	margin: 4% 1.5% 0 1.5%;
+}
+
+aside > a:hover > img
+{
+
+	margin: 1.5% 1.5% 0 1.5%;
+}
+
+aside > div
+{
+	width: 30%;
+	height: auto;
+	margin: 2% 1.5%;
+	float: left;
+}
+
+aside > div > p
+{
+	text-align: center;
+}
+
+aside > form
+{
+	width: 100%;
+	height: auto;
+	margin: 0 auto 5% auto;
+	padding: 5px;
+	background: rgba(155, 155, 155, 0.5);
+}
+
+form > label
+{
+	width: 100%;
+}
+
+input[type=text],
+input[type=password],
+input[type=email]
+{
+	padding: 5px;
+	width: 90%;
+	margin: 5px 0;
+}
+
+input
+{
+	border: 1px solid lightgrey;
+	outline: none;
+}
+
+form > p
+{
+	line-height: 2;
+}
+
+form > p > a:hover
+{
+	color: #209ff9;
+}
+
+input[type=button],
+input[type=submit]
+{
+	padding: 5px;
+}
+
+input[type=button]:hover,
+input[type=submit]:hover
+{
+	cursor: pointer;
+}
+
+form > input[type=submit]
+{
+	width: 50%;
+}
+
+form > input[type=submit]:hover
+{
+	background: #444;
+	color: #FFF;
+}
+
+table
+{
+	width: 90%;
+	height: auto;
+	border-collapse: collapse;
+	margin: 5%;
+}
+
+th, td
+{
+	padding: 10px 12px;
+	text-align: center;
+	border-bottom: 0.2px solid #efefef;
+}
+
+tr:nth-child(even)
+{
+	background-color: #f2f2f2;
+}
+
