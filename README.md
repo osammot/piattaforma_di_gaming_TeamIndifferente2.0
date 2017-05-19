@@ -1,0 +1,1 @@
+# piattaforma_di_gaming_TeamIndifferente2.0
