@@ -1,0 +1,144 @@
+	
+
+	<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        
+        <link rel="stylesheet" href="../css/default.css">
+        <link rel="stylesheet" href="../css/style.css">
+    
+    <script type="text/javascript" src="JS/form_login.js"></script>
+    </head>
+    <body>
+        <!-- DIV HEADER -->
+        <div class="container-fluid contenitore-header">
+            
+                <div class="col-md-12 nav-bar-top">
+                    <#if login?? >			
+	
+
+                    <form method="POST" action="Login" id="form">
+			
+                        <input type="text" name="username" placeholder="Username">
+
+			
+                        <input type="password" name="password" placeholder="Password">
+
+			<input type="submit" name="login" value="Login">
+
+                        <input type="button" onclick="location.href='templates/registrazione.html'" value="Registrati">
+                       
+			
+		</form>
+      
+   
+      
+<#else>
+
+
+<form method="POST" action="Logout" id="form-logout">
+    <span id="login"></span>
+            <p>sei collegato come ${username}</p>
+            <input type="submit" name="login" value="Logout">
+            <input type="button" onclick="location.href='templates/dashboard.html'"  value="" id="dashboard">
+    </form>
+
+</#if>
+                </div>
+                
+                <div class="col-md-12">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10 header">
+                        <h1><span>PIATTAFORMA</span><span id="white">GAMING</span></h1>
+                        <p>created by INIFFERENTE2.0 TEAM</p>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div> 
+        </div>
+        
+        <div class="container-fluid contenitore-main">
+              <div class="col-md-12">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10 main">
+                        <ul>
+                        <li><a href="Home">Home</a></li>
+                        <li><a href="classifica.html">Classifica</a></li>
+                        <li><a href="Profilo">Profilo</a></li>
+                        <li><a href="lista-giochi.html">Lista Giochi</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+        </div>
+        <!-- DIV CONTENT -->
+       
+        <div class="container-fluid">
+            <div class="col-md-1"></div>
+                <div class="col-md-10 wrapper">
+                   
+                                        
+                    		<h2>REGISTRAZIONE NUOVO ACCOUNT</h2>
+
+			<form method="POST" action="" class="registrazione">
+                            <div>
+                                <label>Nome<span id="red">*</span></label>
+				<input type="text" name="nome" value="">
+				<label>Cogome<span id="red">*</span></label>
+				<input type="text" name="cognome" value="">
+                                <label>Indirizzo<span id="red">*</span></label>
+				<input type="text" name="indirizzo" value="">
+                                <label>Citta<span id="red">*</span></label>
+				<input type="text" name="citta" value="">
+                            </div>
+                            <div>
+                                <label>Username<span id="red">*</span></label>
+				<input type="text" name="username" value="">
+				
+				<label>Password<span id="red">*</span></label>
+				<input type="password" name="password" value="">
+				
+				<label>Email<span id="red">*</span></label>
+				<input type="email" name="email" value="">
+                                
+                                <p><span id="red">*</span> capmi obligatori</p>
+                            </div>
+				
+				
+				
+
+				<input type="submit" name="registrati" value="Registrati">
+			</form>
+                                    
+                </div>
+            <div class="col-md-1"></div>
+           
+            
+        </div>
+               
+        <!-- DIV FOOTER -->
+        <div class="container-fluid footer">
+            <div class="col-md-12">
+                <p>Copyright&copy;2017 - Template designed by INDIFFERENTI2.0 team</p>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
+
+		
+
+		
