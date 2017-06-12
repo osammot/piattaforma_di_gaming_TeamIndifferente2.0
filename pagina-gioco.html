@@ -1,0 +1,149 @@
+
+<div class="descrizione">
+    <h2>${gioco.titolo} - ${gioco.mediavoto}</h2>
+    
+    
+    <img src="${gioco.immagine.path}">
+    <p>${gioco.descrizione}</p>
+    
+    <input type="button" value="Gioca" name="gioca">
+    
+    
+    <form method="POST" action="" id="recensione">
+        <h3>Recensisci il gioco</h3>
+        <textarea>
+            
+        </textarea>
+        <input type="submit" name="" value="Invia">
+    </form>
+    
+</div>
+
+<div class="recensioni">
+    <h2>Recensioni Gioco <input type="button" name="mostra" id="mostra-commenti" onclick="visualizza_commenti();" value="+"></h2>
+
+    
+      <#if listaRec?? >    
+                        <div id="commenti">
+                                <table>
+                                    
+                                    <tr id="thead">
+                                    <th>nome</th>
+                                    <th>data</th>
+                                    <th>titolo</th>
+                                    <th>testo</th>
+                                      
+                                    </tr>
+                               
+                                    <#list listaRec as rec>
+                                    <tr>  
+                                    <td>${rec.username}-</td>  
+                                    <td>${rec.dataInserimentoRecensione}-</td>
+                                    <td>${rec.titoloRecensione}-</td>
+                                    <td>${rec.testo} </td> 
+                                    </tr>
+                                    </#list>
+                               
+                                </table>
+                            </div>
+                          </#if>
+</div>
+
+<script type="text/javascript">
+	function visualizza_commenti()
+		{
+			document.getElementById('commenti').style.display='block';
+		}
+	</script>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+    	$('input#mostra-commenti').click(function()
+          {
+			$('table').toggle();
+	      }
+         );
+    </script>
+    
+<!--
+			
+	<div class="row">
+		<div class="col-sm-12 content">
+				
+                    <h1>${gioco.titolo}</h1>
+
+                    <h2>${gioco.mediavoto}</h2>
+          
+
+                    <div>
+                        <div class="descrizione">
+                            <div class="col-md-4">
+                                <img src="${gioco.immagine.path}">
+                            </div>
+                            <div class="col-md-8">
+                                 <p>
+                                    ${gioco.descrizione}
+                                </p>
+                            </div>
+                           
+                           
+                            <input type="button" name="gioca" value="Gioca">
+                        </div>
+                    </div>
+		</div>
+
+                <div class="col-sm-12 content">
+			<h1>RECENSIONI GIOCO</h1>
+                            <div id="bottone">
+                                <input type="button" name="mostra" id="mostra-commenti" onclick="visualizza_commenti();" value="">
+                            </div>
+                          <#if listaRec?? >    
+                        <div id="commenti">
+                                <table>
+                                    
+                                    <tr>
+                                    <th>nome</th>
+                                    <th>data</th>
+                                    <th>titolo</th>
+                                    <th>testo</th>
+                                      
+                                    </tr>
+                               
+                                    <#list listaRec as rec>
+                                    <div> <td>${rec.username}-</td>  
+                                    <td>${rec.dataInserimentoRecensione}-</td>
+                                    </div>
+                                    
+                                    <div> <td>${rec.titoloRecensione}-</td>
+                                    <td>${rec.testo} </td></div>
+                                    </#list>
+                               
+                                </table>
+                            </div>
+                          </#if>
+                </div>
+        </div>
+			
+
+
+		
+
+	
+
+<script type="text/javascript">
+	function visualizza_commenti()
+		{
+			document.getElementById('commenti').style.display='block';
+		}
+	</script>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+    	$('input#mostra-commenti').click(function()
+          {
+			$('table').toggle();
+	      }
+         );
+    </script>
+
+-->
