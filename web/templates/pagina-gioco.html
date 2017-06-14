@@ -1,0 +1,94 @@
+
+<div class="descrizione">
+    <h2>${gioco.titolo} - ${gioco.mediavoto}</h2>
+    
+    
+    <img src="${gioco.immagine.path}">
+    <p>${gioco.descrizione}</p>
+    
+    <input type="button" value="Gioca" name="gioca">
+ 
+            <h4 class="text-info">VOTA</h4> 
+            <form method="post">
+                <span class="rating">
+                    <input type="hidden" name="titolo" value="${gioco.titolo}">
+                    <input type="submit" class="rating-input" value="5"
+                        id="rating-input-1-5" name="rating-input-1">
+                    <label for="rating-input-1-5" class="rating-star"></label>
+                    <input type="submit" class="rating-input" value="4"
+                        id="rating-input-1-4" name="rating-input-1">
+                    <label for="rating-input-1-4" class="rating-star"></label>
+                    <input type="submit" class="rating-input" value="3"
+                        id="rating-input-1-3" name="rating-input-1">
+                    <label for="rating-input-1-3" class="rating-star"></label>
+                    <input type="submit" class="rating-input" value="2"
+                        id="rating-input-1-2" name="rating-input-1">
+                    <label for="rating-input-1-2" class="rating-star"></label>
+                    <input type="submit" class="rating-input" value="1"
+                        id="rating-input-1-1" name="rating-input-1">
+                    <label for="rating-input-1-1" class="rating-star"></label>
+                </span>
+            </form> 
+ 
+</div>
+<div class="recensioni">
+    <h2> Recensisci Gioco <input type="button" name="mostra" id="mostra-form" onclick="visualizza_commenti();" value="+"></h2>
+
+            
+        <form method="POST"  id="recensione">
+        <h3>Recensisci il gioco</h3>
+        <label for="titolo">titolo recensione</label>
+        <input type="text" name="titolo" >
+        
+        <label for="message">testo recensione</label>
+        <input type="text" name="message" >
+        <input type="submit"  value="Invia">
+    </form>
+ </div>
+<div class="recensioni">
+    <h2>Visualizza Recensioni Gioco <input type="button" name="mostra" id="mostra-commenti" onclick="visualizza_commenti();" value="+"></h2>
+
+    
+      <#if listaRec?? >    
+                        <div id="commenti">
+                                <table>
+                                    
+                                    <tr id="thead">
+                                    <th>nome</th>
+                                    <th>data</th>
+                                    <th>titolo</th>
+                                    <th>testo</th>
+                                      
+                                    </tr>
+                               
+                                    <#list listaRec as rec>
+                                    <div> <td>${rec.username}-</td>  
+                                    <td>${rec.dataInserimentoRecensione}-</td>
+                                    </div>
+                                    
+                                    <div> <td>${rec.titoloRecensione}-</td>
+                                    <td>${rec.testo} </td></div>
+                                    </#list>
+                               
+                                </table>
+                            </div>
+                          </#if>
+</div>
+
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+    	$('input#mostra-commenti').click(function()
+          {
+			$('table').toggle();
+	      }
+         );
+ 
+ 
+ $('input#mostra-form').click(function()
+          {
+			$('form').toggle();
+	      }
+         );
+    </script>
+    

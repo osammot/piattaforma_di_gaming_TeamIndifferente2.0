@@ -1,0 +1,548 @@
+body
+{
+    background: url('http://www.fg-a.com/wallpapers/2017-4-light-background-geo.jpg') no-repeat fixed;
+    background-size: cover;
+    position: relative;
+    z-index: -2;
+}
+
+.contenitore-header
+{
+    width: 100%;
+    height: 340px;
+    background: url('../img/background-header.jpg') no-repeat;
+    background-size: 100% 100%;
+    z-index: -1;
+
+}
+
+.nav-bar-top
+{
+    width: 100%;
+    height: auto;
+    background: #320c54;
+    margin: 0;
+    padding: 0;
+    border-bottom: 2px solid #fcb605;
+}
+
+.nav-bar-top ul
+{
+    float: right;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.nav-bar-top ul li
+{
+    float: right;
+    width: 10%;
+}
+
+.nav-bar-top ul li a:hover
+{
+    text-decoration: none;
+    color: #fcb605;
+}
+
+#login
+{
+    display: block;
+    width: 35px;
+    height: 35px;
+    float: left;
+    background-image: url('../img/login.png');
+    background-position: center center;
+    background-size: 35px 35px;
+    background-repeat: no-repeat;
+    margin-right: 2%;
+}
+
+.header
+{
+    margin: 5% auto 0 auto;
+    width: 80%;
+    height: 200px;   
+}
+
+.header h1
+{
+    color: #fcb605;
+    text-shadow: 1px 1px 1px #000;
+    font-size: 300%;
+}
+
+.header h1 > span
+{
+    display: inline-block;
+}
+
+.header span#white
+{
+    color: #FFF;
+}
+
+.header p
+{
+    color: #FFF;
+    text-shadow: 1px 1px 1px #000;
+}
+
+.contenitore-main
+{
+    margin-top: -40px;
+}
+
+.main
+{
+    width: 90%;
+    height: auto;
+    margin: 0 5%;
+    background: #fcb605;
+    border: 1px solid #2d2101;
+}
+
+.main ul
+{
+    width: 100%;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.main li a
+{
+    padding: 20px;
+}
+
+.main li a:hover
+{
+    text-decoration: none;
+    color: #FFF;
+    background: #db8c2b;
+    
+}
+
+#messaggi
+{
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: url('../img/message.png') no-repeat;
+    background-size: 30px 30px;
+    float: left;
+    margin: 0.5%;
+}
+
+.wrapper
+{
+    height: auto;
+    position: relative;
+    z-index: 0; 
+    width: 90%;
+    margin: 0.5% 5% 2% 5%;
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid #2d2101;
+}
+
+.wrapper h2
+{
+    padding: 5% 0 0.5% 0;
+    border-bottom: 1px solid #320c54;
+    color: #fcb605;
+    width: 95%;
+    margin: 0 2.5% 0.5% 2.5%;
+    text-shadow: 1px 1px 1px #320c54;
+}
+
+.contenitore-gioco
+{
+    float: left;
+    width: 20%;
+    margin: 5% 2.5% 0 2.5%;
+    position: relative;
+}
+
+.contenitore-gioco a
+{
+    text-decoration: none;
+}
+
+.contenitore-gioco p
+{
+    margin: 10px 0;
+}
+
+@media screen and (max-width:540px )
+{
+    .header h1
+    {
+        font-size: 90%;
+    }
+    
+    div.contenitore-gioco
+    {
+        width: 95%;
+        float: none;
+    }
+    
+    .contenitore-gioco p
+    {
+        white-space: nowrap; 
+        width: 100%; 
+        overflow: hidden;
+        text-overflow: ellipsis; 
+    }
+}
+
+@media screen and (min-width:720px)
+{
+    .contenitore-gioco p
+    {
+        white-space: nowrap; 
+        width: 100%; 
+        overflow: hidden;
+        text-overflow: ellipsis; 
+    }
+}
+
+
+
+.contenitore-bottoni
+{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 84%;
+    background: rgba(15, 15, 15, 0.9);
+    display: none;
+    z-index: 3;
+}
+
+.contenitore-gioco:hover .contenitore-bottoni
+{
+    display: block;
+}
+
+.contenitore-bottoni input[type=submit],
+.contenitore-bottoni input[type=button]
+{
+    margin: 15% 5% 0 5%;
+    width: 90%;
+   padding: 3%;
+   border: 1px solid transparent;
+}
+
+.footer
+{
+    background: #222;
+}
+
+.footer p
+{
+    color: #FFF;
+    padding: 2.5% 0;
+    text-align: center;
+}
+
+#form
+{
+    float: right;
+    width: 40%;
+    padding: 1%;
+}
+
+#form input
+{
+    float: left;
+    margin-right: 1%;
+    padding: 1%;
+}
+
+#form input[type=submit],
+#form input[type=button]
+{
+    padding: 0.8%;
+    width: 15%;
+}
+
+#form-logout
+{
+    width: 30%;
+    float: right;
+    padding: 1% 0;
+}
+
+#form-logout input[type=submit],
+#form-logout input[type=button]
+{
+    padding: 0.8%;
+    width: 15%;
+}
+
+#form-logout p
+{
+    color: #FFF;
+    float: left;
+    padding-top: 1%;
+    font-size: 1.25em;
+    margin-right: 5%;
+}
+
+.descrizione
+{
+    position: relative;
+}
+
+.descrizione img
+{
+    width: 20%;
+    margin: 2.5%;
+    float: left;
+}
+
+.descrizione p
+{
+    line-height: 2;
+    text-align: justify;
+    padding: 2.5%;
+}
+
+.descrizione input[type=button]
+{
+    width: 20%;
+    padding: 1%;
+    font-size: 1.25em;
+}
+
+.recensioni input[type=button]
+{
+    border-radius: 45px;
+    float: right;
+}
+
+form#recensione
+{
+    float: right;
+    margin: 2.5% 15%;;
+    width: 60%;
+}
+
+#recensione textarea
+{
+    width: 100%;
+    padding: 1%;
+    resize: none;
+    text-align: left;
+}
+
+#recensione input[type=submit]
+{
+    padding: 1%;
+    width: 20%;
+    float: right;
+    margin: 2.5% 0;
+}
+
+.content p
+{
+    margin: 2.5%;
+}
+
+.main-dashboard
+{
+    float: left;
+    margin: 0;
+    background: rgba(15, 15, 15, 0.3);
+    height: 80vh;
+    margin-right: 0;
+    padding-right: 0;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.main-dashboard ul
+{
+    margin: 0;
+    padding: 0;
+}
+
+.main-dashboard ul li
+{
+    float: none;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid orange;
+}
+
+.main-dashboard ul li:first-child
+{
+    border-bottom: none;
+}
+
+.main-dashboard ul li:last-child
+{
+    border-bottom: none;
+}
+
+.main-dashboard li a
+{
+    color: #FFF;
+    text-shadow: 1px 1px 1px #000;
+}
+
+.main-dashboard ul li a:hover
+{
+    background: #000;
+    color: #FFF;
+    text-decoration: none;
+}
+
+.main-dashboard li h4
+{
+    color: #fcb605;
+    background: #320c54;
+    width: 100%;
+    padding: 15px 20px;
+    text-align: center;
+    margin: 0;
+    border-bottom: 2px solid #fcb605;
+    
+}
+
+#wrapper
+{
+    background: rgba(255, 255, 255, 0.3);
+    height: 80vh;
+    overflow: auto;
+}
+
+#form-add-gioco
+{
+    width: 80%;
+    height: auto;
+    margin: 5% 10%;
+}
+
+#form-add-gioco label,
+#form-add-gioco textarea,
+#form-add-gioco input
+{
+    width: 60%;
+    margin: 1.5% 20%;
+    padding: 1%;
+}
+
+#form-add-gioco input[type=submit]
+{
+    width: 40%;
+}
+
+#form-add-gioco h3
+{
+    width: 60%;
+    margin: 2% 20%;
+    color: #fcb605;
+    text-shadow: 1px 1px 1px #320c54; 
+}
+
+#table td
+{
+    color: #FFF;
+}
+
+#titolo-tabella
+{
+    width: 60%;
+    padding: 2% 2.5%;
+    color: #fcb605;
+    text-shadow: 1px 1px 1px #320c54; 
+}
+
+#table tr:nth-child(odd)
+{
+    background: rgba(15, 15, 15, 0.3);
+}
+
+#table input[type=button]
+{
+    background: transparent;
+}
+
+#table input[type=button]:hover
+{
+    border: 1px solid transparent;
+    text-decoration: underline;
+}
+
+#green
+{
+    color: greenyellow; 
+}
+
+#orange
+{
+    color: orange;
+}
+
+input#dashboard
+{
+    display: block;
+    width: 25px;
+    height: 25px;
+    background: url('../img/dashboard.png') no-repeat;
+    background-size: 25px 25px;
+    background-position: center center;
+    float: left;
+    margin-top: 3px;
+   
+}
+
+input#dashboard:hover
+{
+    border:1px solid transparent;
+}
+
+.registrazione
+{
+    width: 90%;
+    height: auto;
+    margin: 5%;
+}
+
+.registrazione label,
+.registrazione input
+{
+    width: 80%;
+    margin: 1% 10%;
+    padding: 1%;
+}
+
+.registrazione div
+{
+    float: left;
+    width: 50%;
+}
+
+.registrazione input[type=submit]
+{
+    width: 40%;
+    margin: 0.5% 5% 0 5%;
+    padding: 0.5%;
+}
+
+#red
+{
+    color: red;
+    float: left;
+    margin-right: 1%;
+}
+
+.registrazione p
+{
+    color: #000;
+    text-decoration: underline;
+    margin: 10%;
+}
+/*vote star system*/
+

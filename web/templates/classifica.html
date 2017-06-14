@@ -1,0 +1,166 @@
+<div class="col-sm-8">
+
+    <div class="col-sm-12 content">
+	<h1>CLASSIFICA GIOCATORI</h1>
+        <select onchange="invio(this.value);return false;">
+            <optgroup>
+                <option value="generale">generale</option>
+            </optgroup>
+            <optgroup>
+            <#list listgamename as namegame>
+            <option value="${namegame}">${namegame}</option>
+            </#list>
+            </optgroup>
+        </select>
+        <div id='todo'>
+            
+            
+            
+        </div>
+
+    </div>
+
+</div>
+
+			
+<script>
+    
+
+
+    function view(data){
+        
+   var r = document.getElementById("todo");
+
+    while (r.firstChild) r.removeChild(r.firstChild);
+
+        if (data.length>0) {
+        var myObject = JSON.parse(data);
+      
+            var table = document.createElement("TABLE");
+           // table.className="col-md-9 col-sm-9";
+            
+            var tr = document.createElement("TR");
+            
+            var col_punteggio = document.createElement("TH");
+            col_punteggio.textContent="gioco";
+            
+            var col_user = document.createElement("TH");
+            col_user.textContent="username";
+            
+            var col_posizione = document.createElement("TH");
+            col_posizione.textContent="posizione";
+            
+            
+            
+            table.appendChild(tr);
+            tr.appendChild(col_punteggio);
+            tr.appendChild(col_user);
+            tr.appendChild(col_posizione);
+       
+            for(i=0; i<myObject.length;++i) {
+                  var item = myObject[i];
+                  
+                  
+                var th1 = document.createElement("TD");
+              
+                th1.textContent = item.user.username;
+                
+                 var th2 = document.createElement("TD");
+                th2.textContent = item.punteggio;
+                
+                 var th3 = document.createElement("TD");
+                th3.textContent = i+1;
+                
+                
+                
+                var trb = document.createElement("TR");
+                trb.appendChild(th1);
+                trb.appendChild(th2);
+                trb.appendChild(th3);
+                
+                
+            table.appendChild(trb);
+            }
+        r.appendChild(table);
+    }else
+    alert("vuotoo");
+}
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+    function invio(nomegioco){
+        
+        var req = createRequest();
+        req.open("GET","/ERAMOProject/Classifica?title=" + nomegioco,false);
+        req.send(null);
+
+    if ( req.readyState === 4 && req.status=== 200) {
+            var jsondata = req.responseText;
+           
+            view(jsondata);
+    } else {
+        alert("Data transfer error");
+        return new Array();
+   }
+}
+
+
+function createRequest() {
+       
+            var ACTIVEXIDs=["MSXML2.XmlHttp.6.0","MSXML2.XmlHttp.3.0"];
+            if (typeof XMLHttpRequest !== "undefined") {
+                return new XMLHttpRequest();
+            } else if (typeof ActiveXObject !== "undefined") {
+                for (var i=0; i < ACTIVEXIDs.length; i++) {
+                    try {
+                        return new ActiveXObject(ACTIVEXIDs[i]);
+                    } catch (oError) {
+                    //l'oggetto richiesto non esiste: proviamo il successivo
+                    //the requested object does not exist: try the next one
+                    }
+                }
+                alert("XMLHttpRequest could not be created");
+            } else {
+                alert("XMLHttpRequest could not be created");
+            }
+            return null;
+}   
+    
+</script>
+	
+
+
+		

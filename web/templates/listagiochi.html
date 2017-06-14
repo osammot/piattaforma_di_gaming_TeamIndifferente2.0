@@ -1,0 +1,16 @@
+
+    
+    <#list listagiochi as gioco>
+                <div class="contenitore-gioco">
+                        <div class="img">
+                            <a>
+                                <img src="${gioco.immagine.path}">
+                                    <div class="contenitore-bottoni">
+                                        <input type="button" name="" value="descrizione" id="desc" onclick="location.href='PaginaGioco?titolo=${gioco.titolo}'">
+                                        <input type="button" name="" value="gioca">
+                                    </div>
+                            </a>
+                        </div>
+                     <p>> ${gioco.titolo}</p>
+                </div>   
+    </#list>

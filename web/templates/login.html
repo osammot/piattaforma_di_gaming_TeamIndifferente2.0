@@ -1,0 +1,29 @@
+
+
+<aside>
+<#if login?? >			
+		<h1>LOGIN</h1>
+
+		<form method="POST" action="Login">
+			<label>Username</label>
+			<input type="text" name="username">
+
+			<label>Password</label>
+			<input type="password" name="password">
+
+			<input type="submit" name="login" value="Login">
+
+			<p>Non hai un account? Clicca <a href="registrazione.html">Qui</a></p>
+		</form>
+<#else>
+
+<div class="col-sm-4">
+    <form method="POST" action="Logout">
+            <p>sei collegato come ${username}</p>
+            <input type="submit" name="login" value="Logout">
+    </form>
+</div>
+</#if>
+
+</aside>
+
