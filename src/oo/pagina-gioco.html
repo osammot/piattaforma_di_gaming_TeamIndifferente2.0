@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+<header>
+	<div>
+		<h1>PIATTAFORMA<span>GAMING</span></h1>
+	</div>
+	
+	<nav>
+		<ul>
+			<li><a href="index.html">HOME</a></li>
+            <li><a href="classifica.html">CLASSIFICA</a></li>
+            <li><a href="profilo.html">PROFILO</a></li>
+            <li><a href="lista-giochi.html">LISTA GIOCHI</a></li>
+            <li><a href="news.html">NEWS</a></li>
+            <li><a href="messaggi.html"><img src="img/message.png" alt=""></a></li>
+		</ul>
+	</nav>
+</header>
+
+<!--======= CONTENITORE WRAPPER =======-->
+<div class="wrapper">
+
+	<div class="slideshadow">
+		<img src="" alt="">
+		<div class="descrizione">
+			
+		</div>
+	</div>
+
+<!--======= CONTENITORE SINISTRO =======-->
+
+	<div class="contenitore-sx">
+	<div>
+		<h1>NOME GIOCO</h1>
+
+			<div class="box">
+				<img src="http://localhost:8084/progetto/img/IMAGE%20GAME/game2.jpg">
+				<img src="http://localhost:8084/progetto/img/IMAGE%20GAME/game10.jpg">
+				<img src="http://localhost:8084/progetto/img/IMAGE%20GAME/game1.jpg">
+
+				<div>
+					<div class="descrizione">
+
+						<img src="http://localhost:8084/progetto/img/stelle.png">
+
+						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+					</div>
+					
+
+					<input type="button" name="vota" value="Vota">
+
+					<input type="button" name="gioca" value="Gioca">
+				</div>
+			</div>
+	</div>
+
+<div class="commenti">
+
+	<h1>RECENSIONI GIOCO</h1>
+	<div id="bottone">
+		<input type="button" name="mostra" id="mostra-commenti" onclick="visualizza_commenti();" value="">
+		
+	</div>
+	<div id="commenti">
+		<table >
+			<tr>
+				<td>nome</td>
+				<td>commento</td>
+			</tr>
+			<tr>
+				<td>nome</td>
+				<td>commento</td>
+			</tr>
+			<tr>
+				<td>nome</td>
+				<td>commento</td>
+			</tr>
+			<tr>
+				<td>nome</td>
+				<td>commento</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+	<script type="text/javascript">
+	function visualizza_commenti()
+		{
+			document.getElementById('commenti').style.display='block';
+		}
+	</script>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+    	$('input#mostra-commenti').click(function()
+          {
+			$('table').toggle();
+	      }
+         );
+    </script>
+
+</div>
+
+
+<!--======= CONTENITORE DESTRO =======-->
+	<div class="contenitore-dx">
+
+		<aside>
+			
+		<h1>LOGIN</h1>
+
+		<form method="POST" action="">
+			<label>Username</label>
+			<input type="text" name="username">
+
+			<label>Password</label>
+			<input type="password" name="password">
+
+			<input type="submit" name="login" value="Login">
+
+			<p>Non hai un account? Clicca <a href="">Qui</a></p>
+		</form>
+
+		</aside>
+
+		<aside>
+			
+			<h1>TOP GAMES</h1>
+
+			<a href=""><img src="http://localhost:8084/progetto/img/IMAGE%20GAME/game2.jpg"></a>
+			<a href=""><img src="http://localhost:8084/progetto/img/IMAGE%20GAME/game10.jpg"></a>
+			<a href=""><img src="http://localhost:8084/progetto/img/IMAGE%20GAME/game1.jpg"></a>
+			
+		</aside>
+
+		<aside>
+			
+				<h1>TOP GAMER</h1>
+				<div>
+					<img src="http://localhost:8084/progetto/img/user.png">
+					<p>nome</p>
+				</div>
+
+				<div>
+					<img src="http://localhost:8084/progetto/img/user.png">
+					<p>nome</p>
+				</div>
+
+				<div>
+					<img src="http://localhost:8084/progetto/img/user.png">
+					<p>nome</p>
+				</div>
+			
+		</aside>
+
+		<aside>
+			
+			<h1>NEW GAMES</h1>
+			
+			<a href=""><img src="http://localhost:8084/progetto/img/IMAGE%20GAME/game2.jpg"></a>
+			<a href=""><img src="http://localhost:8084/progetto/img/IMAGE%20GAME/game10.jpg"></a>
+			<a href=""><img src="http://localhost:8084/progetto/img/IMAGE%20GAME/game1.jpg"></a>
+
+		</aside>
+	</div>
+
+</div>
+
+<footer>
+	<div>
+		<p>Copyright&copy2017-Template designed by INDIFFERENTE2.0 TEAM</p>
+	</div>
+	
+</footer>
+
+</body>
+</html>
