@@ -7,8 +7,10 @@ package Controller;
 
 import Data.RecensioneDao;
 import Data.TrofeoDao;
+import Data.UtenteDao;
 import Model.Recensione;
 import Model.Trofeo;
+import Model.Utente;
 import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -20,6 +22,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import static org.apache.tomcat.jni.User.username;
 import result.TemplateManagerException;
 import result.TemplateResult;
 
@@ -145,6 +148,7 @@ public class BackOffice extends BaseServlet {
                 
                 switch ((String)request.getParameter("action")){
                 
+                    case "use": action_UserAjax(request, response); break ;
                     case "rec": action_RecensioniAjax(request, response); break ;
                     case "trofei" : action_TrofeiAjax(request, response);break;
                     case "deletetrofeo" : action_deleteTrofeoAjax(request,response);break;
@@ -157,5 +161,43 @@ public class BackOffice extends BaseServlet {
             Logger.getLogger(BackOffice.class.getName()).log(Level.SEVERE, null, ex);
         }
     } 
+
+    private void action_UserAjax(HttpServletRequest request, HttpServletResponse response) {
+        
+        if(request.getParameter("username") != null){
+            
+            try {
+                String value = String.parseString(request.getParameter("username") );
+                Utente utente = UtenteDao.recuperaUtente(value);
+                System.out.println("user =  " +value+ utente.getUsername() );
+                this.s = new Gson();
+                String jsonUser = s.toJson(user);
+                response.getWriter().println(jsonUser);
+                
+                
+            } catch (SQLException ex) {
+                Logger.getLogger(BackOffice.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(BackOffice.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            }
+        
+        else{
+        try {
+            
+            List<Trofeo> listTrofei = trofeodao.listTrofei();
+            this.s = new Gson();
+            String jsonRec = s.toJson(listTrofei);
+            response.getWriter().println(jsonRec);
+        } catch (SQLException ex) {
+            Logger.getLogger(BackOffice.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(BackOffice.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    }
     
+
+
 }

@@ -22,6 +22,8 @@ public class UtenteDao {
     private PreparedStatement sUtente,sTOpGAMER ;
     private PreparedStatement checkUtente ;
     private PreparedStatement iUtente ;
+    private PreparedStatement sListUserBO;
+
     
    
     private ResultSet rs;
@@ -32,6 +34,8 @@ public class UtenteDao {
             sUtente = cn.conn.prepareStatement("SELECT * FROM utente where username = ? ");
             iUtente = cn.conn.prepareStatement  ("insert into utente(username,nome,cognome,password,indirizzo,email,città,ruolo) value (?,?,?,?,?,?,?,?)");
             checkUtente = cn.conn.prepareStatement("SELECT * FROM utente WHERE username = ? and password = ?");
+            sListUserBO = cn.conn.prepareStatement("SELECT username,ruolo FROM utente");
+
             
         }
         

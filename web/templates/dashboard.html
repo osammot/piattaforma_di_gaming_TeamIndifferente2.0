@@ -1,19 +1,8 @@
 <div class="container-fluid">
-
-        <div class="main-dashboard ">
-            <li><h4>Menu</h4></li>
+    <div class="main-dashboard ">
+            <li><h1>Menu</h1></li>
                 <ul>
-                    <li>
-                        <a data-toggle="collapse" href="#dropdown-lvl1">
-                            Gestione Utenti <span class="caret"></span>
-                        </a>
-                        <ul id="dropdown-lvl1" class="collapse">
-                            
-                                <li><a  onclick="showTrofei();return false;">Modifica Utente</a></li>
-                                <li><a  onclick="deleteTrofei();return false;" >inserisci Utente</a></li>
-                            </ul>
-                       
-                    </li>
+                 <li><a data-toggle="collapse" href="#dropdown-lvl1" onclick="showUtenti();return false;"> Gestione Utenti </a></li>
                 </ul>
                 <ul>
                     <li><a href= "" onclick = "showRec();return false; " >Gestione Recensioni</a></li>
@@ -25,10 +14,8 @@
                         </a>
                            
                             <ul id="dropdown-lvltrofei" class="collapse">
-                                <li><a href="" onclick="showTrofei();  return false;" >  Inserisci Trofeo </a></li>
-                                <li><a href="" onclick="showTrofei();  return false;" >   Modifica Trofeo  </a></li>
-                                <li><a href="" onclick="deleteTrofei();return false;" >Cancella Trofeo  </a></li>
-                                  
+                                <li><a href="" onclick="showTrofei();  return false;" >Inserisci Trofeo </a></li>
+                                <li><a href="" onclick="showTrofei();  return false;" >Modifica Trofeo  </a></li>
                             </ul>
                        </li>
                 </ul>
@@ -39,7 +26,7 @@
   
         <div class=" panel-default">
             <div class="panel-heading">
-		Dashboard
+                <b  > Dashboard - Welcome </b> 
             </div>
             <div class="panel-body">
                 <div  id="todo">
@@ -55,6 +42,125 @@
 
 
 <script>
+/*utenti*/
+    
+function showUtenti() {
+    var data = getUtente();
+    displayUser(data);
+}
+
+
+function displayUser(data) {
+    var r = document.getElementById("todo");
+
+    while (r.firstChild)r.removeChild(r.firstChild);
+    
+        if (data.length>0) {
+        var myObject = JSON.parse(data);
+      
+            var table = document.createElement("TABLE");
+          
+            var tr = document.createElement("TR");
+            
+            var col_user = document.createElement("TH");
+            col_user.className="col-lg-1";
+            col_user.textContent="utente";
+            
+            var col_ruolo = document.createElement("TH");
+            col_ruolo.className="col-lg-1";
+            col_ruolo.textContent="testo";
+            
+            /*
+            var col_accept = document.createElement("TH");
+            col_accept.className="col-lg-1";
+            col_accept.textContent=" ";
+            
+            var col_decline = document.createElement("TH");
+            col_decline.className="col-lg-1";
+            col_decline.textContent=" ";
+            
+          */
+            table.appendChild(tr);
+            tr.appendChild(col_user);
+            tr.appendChild(col_ruolo);
+           /* tr.appendChild(col_accept);
+            tr.appendChild(col_decline);*/
+            
+            
+            for(i=0; i<myObject.length;++i) {
+                
+                 var item = myObject[i];
+               
+                 var th2 = document.createElement("TD");
+                 var th3 = document.createElement("TD"); 
+                 
+                /* 
+                 * var th6 = document.createElement("button");
+               
+                th6.type="button";
+                th6.value=item.id_recensione;
+                th6.className="bg-primary";
+                th6.textContent="Promuovi";
+                th6.onclick= function () {
+                                            approvaRecensione(this.value);
+                                            };
+                
+                
+                var th7 = document.createElement("button");
+                th7.onclick= function () {
+                                            cancellaRecensione(this.value);
+                                            };
+               
+                th7.value=item.id_recensione;
+                th7.type="button";
+                th7.className="bg-primary";
+                th7.textContent="Declassa";
+                */
+                
+                 th2.textContent = item.username;
+                 th3.textContent = item.ruolo;
+
+                
+                /*var th8 = document.createElement("td");
+                th8.appendChild(th6);
+                var th9 = document.createElement("td");
+                th9.appendChild(th7);
+                var trb = document.createElement("tr");*/
+                trb.appendChild(th2);
+                trb.appendChild(th3);
+
+                trb.appendChild(th8);
+                trb.appendChild(th9);
+
+            table.appendChild(trb);
+            }
+        r.appendChild(table);
+    }else
+    alert("vuoto");
+}
+
+function getUtente(){
+    var req = createRequest();
+    req.open("GET","/ERAMOProject/BackOffice?action=use",false);
+    req.send(null);
+
+    if ( req.readyState === 4 && req.status === 200) {
+        
+            var jsondata = req.responseText;
+      
+            return jsondata;
+    } else {
+        //in caso di errore...
+        //if there has been an error...
+        alert("Data transfer error");
+       return new Array();
+    }
+}
+
+    
+
+
+/*recensioni*/
 function displayRecensioni(data) {
     var r = document.getElementById("todo");
 
@@ -204,11 +310,8 @@ function approvaRecensione(id_rec){
 
 
 function showRec() {
-    alert("show rec") ;
     var data = getRecensioni();
-    alert("data") ;
     displayRecensioni(data);
-    alert("display rec") ;
    // setTimeout(update,2000);
 }
 

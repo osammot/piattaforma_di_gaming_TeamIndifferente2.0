@@ -544,5 +544,33 @@ input#dashboard:hover
     text-decoration: underline;
     margin: 10%;
 }
+
+#domanda
+{
+    text-align: center;
+    margin: 2.5% 0;
+    border-bottom: none;
+    color: #fcb605;
+   
+}
+
+#search
+{
+    width: 50%;
+    margin: 0 25%;
+}
+
+#search input[type=text]
+{
+    padding: 1%;
+    width: 100%;
+    background: url('../img/lente.png') no-repeat;
+    background-size: 25px 25px;
+    background-position: 5px 5px;
+    padding-left: 5%;
+    font-size: 1.25em;
+    background-color: #FFF;
+    border: 1px solid transparent;
+}
 /*vote star system*/
 
